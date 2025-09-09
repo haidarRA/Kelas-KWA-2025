@@ -8,7 +8,10 @@ The application has a login function, and the database contains a table that hol
 To solve the lab, log in as the administrator user.
 
 ## Resource
-https://portswigger.net/web-security/sql-injection/examining-the-database
+
+Link soal: https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle
+
+Link referensi: https://portswigger.net/web-security/sql-injection/examining-the-database
 
 ## Langkah - langkah
 1. Masuk ke halaman lab terlebih dahulu menggunakan browser bawaan Burp Suite.
