@@ -10,29 +10,29 @@ https://portswigger.net/web-security/sql-injection
 1. Masuk ke halaman login terlebih dahulu.
    <img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/7f3b2208-cb58-4533-a83c-b313a9d2b507" />
 
-2. Setelah itu, masuk ke halaman login. Masukkan payload `administrator' OR 1=1--` di kolom "Username". Untuk password bebas diisi apa saja.
-   <img width="1919" height="1088" alt="image" src="https://github.com/user-attachments/assets/85e37169-61be-4ee3-a2f3-25c114904bb2" />
+2. Setelah itu, masuk ke halaman login. Masukkan payload `admin@juice-sh.op' OR 1=1--` di kolom "Email". Untuk password bebas diisi apa saja.
+   <img width="1919" height="1088" alt="image" src="https://github.com/user-attachments/assets/1dab76ae-374a-4ee5-ae46-0d6fbaaeb59e" />
    Hasilnya adalah sebagai berikut.
    <img width="1918" height="1082" alt="image" src="https://github.com/user-attachments/assets/430382a0-7286-4c0e-8a39-96b29cf1251f" />
 
 ## Catatan
 Struktur query SQL yang rentan terhadap SQL injection biasanya seperti berikut.
 ```
-SELECT * FROM users WHERE username = '$username' AND password = '$password'
+SELECT * FROM users WHERE email = '$email' AND password = '$password'
 ```
 
 Jika digunakan payload sebelumnya yang berhasil, maka hasil querynya adalah sebagai berikut.
 ```
-SELECT * FROM users WHERE username = 'administrator' OR 1=1--' AND password = 'aaaa'
+SELECT * FROM users WHERE email = 'admin@juice-sh.op' OR 1=1--' AND password = 'aaaa'
 ```
 
-Setelah username administrator, ditambahkan `OR 1=1--` yang menyebabkan nilai menjadi `true` dan adanya comment di belakang yang mengabaikan password sehingga bisa login sebagai administrator meskipun passwordnya salah.
+Setelah email administrator, ditambahkan `OR 1=1--` yang menyebabkan nilai menjadi `true` dan adanya comment di belakang yang mengabaikan password sehingga bisa login sebagai administrator meskipun passwordnya salah.
 
 Untuk soal ini juga bisa dikerjakan dengan Burp Suite untuk memodifikasi request. Tetapi karena langkah - langkahnya yang cukup mudah, soal ini bisa dikerjakan meski tidak menggunakan Burp Suite maupun tools lainnya.
-<img width="1919" height="1134" alt="image" src="https://github.com/user-attachments/assets/bbd71aff-746d-4146-8eec-55a485b13f7b" />
+<img width="1919" height="1131" alt="image" src="https://github.com/user-attachments/assets/27f26d09-08e9-4354-8cec-895708ef24d3" />
 
-Setelah intercept request, ubah parameter "username" menjadi `administrator'--`.
-<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/077bd8f2-af07-4a74-81ad-845f27dd944d" />
+Setelah intercept request, ubah parameter "email" menjadi `admin@juice-sh.op' OR 1=1--`.
+<img width="1919" height="1134" alt="image" src="https://github.com/user-attachments/assets/0cf49c22-c112-4152-8282-90e56e51b639" />
 
 Hasil:
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/b93e3977-59ff-4ada-aae6-d93c14438559" />
