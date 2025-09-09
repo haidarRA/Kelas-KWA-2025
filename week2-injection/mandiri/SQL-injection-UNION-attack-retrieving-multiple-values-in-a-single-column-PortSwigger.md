@@ -47,6 +47,6 @@ https://portswigger.net/web-security/sql-injection/union-attacks
 
 
 ## Catatan
-Di soal ini, karena tipe data kolom pertama query SQL adalah NULL, maka tidak bisa dimasukkan kolom `username` atau `password` yang merupakan kolom dengan tipe data string.
+Di soal ini, karena tipe data kolom pertama query SQL bukan string, maka tidak bisa dimasukkan kolom `username` atau `password` yang merupakan kolom dengan tipe data string.
 
 Oleh karena itu, untuk mengakali ini, digunakan metode concatenation untuk menggabung kolom `username` dan `password` menjadi satu kolom saja.
