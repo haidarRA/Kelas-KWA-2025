@@ -8,7 +8,10 @@ The database contains a different table called users, with columns called userna
 To solve the lab, perform a SQL injection UNION attack that retrieves all usernames and passwords, and use the information to log in as the administrator user.
 
 ## Resource
-https://portswigger.net/web-security/sql-injection/union-attacks
+
+Link soal: https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-multiple-values-in-single-column
+
+Link referensi: https://portswigger.net/web-security/sql-injection/union-attacks
 
 ## Langkah - langkah
 1. Masuk ke halaman lab terlebih dahulu menggunakan browser bawaan Burp Suite.
