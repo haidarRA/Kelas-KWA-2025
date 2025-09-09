@@ -1,4 +1,4 @@
-# Login Bender
+# Database Schema
 
 ## Deskripsi
 Exfiltrate the entire DB schema definition via SQL Injection.
