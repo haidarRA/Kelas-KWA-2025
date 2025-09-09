@@ -5,6 +5,7 @@ Exfiltrate the entire DB schema definition via SQL Injection.
 
 ## Resource
 https://portswigger.net/web-security/sql-injection/examining-the-database
+
 https://portswigger.net/web-security/sql-injection/union-attacks
 
 ## Langkah - langkah
