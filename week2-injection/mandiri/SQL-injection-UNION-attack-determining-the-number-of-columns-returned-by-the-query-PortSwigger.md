@@ -6,7 +6,10 @@ This lab contains a SQL injection vulnerability in the product category filter. 
 To solve the lab, determine the number of columns returned by the query by performing a SQL injection UNION attack that returns an additional row containing null values.
 
 ## Resource
-https://portswigger.net/web-security/sql-injection/union-attacks
+
+Link soal: https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns
+
+Link referensi: https://portswigger.net/web-security/sql-injection/union-attacks
 
 ## Langkah - langkah
 1. Masuk ke halaman lab terlebih dahulu menggunakan browser bawaan Burp Suite.
